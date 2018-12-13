@@ -1,23 +1,36 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <img src="./assets/img/logo.png">
+    <div>
+      <p>
+        If Element is successfully added to this project, you'll see an
+        <code v-text="'<el-button>'"></code>
+        below
+      </p>
+      <el-button type="primary">{{ $t('home.test') }}</el-button>
+    </div>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
+import HelloWorld from './views/HelloWorld.vue'
+
 export default {
-  name: 'App'
+  name: 'app',
+  components: {
+    HelloWorld
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>
