@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import Element from 'element-ui'
-import './assets/css/element-variables.scss'
+// import '../theme/index.css'
 import i18n from './config/i18n'
 import store from './config/store'
 import router from './config/router'
