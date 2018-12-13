@@ -8,6 +8,7 @@
         below
       </p>
       <el-button type="primary">{{ $t('home.test') }}</el-button>
+      <theme-picker class="theme-switch right-menu-item"/>
     </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -15,11 +16,13 @@
 
 <script>
 import HelloWorld from './views/HelloWorld.vue'
+import ThemePicker from '@/components/ThemePicker'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    ThemePicker
   }
 }
 </script>
