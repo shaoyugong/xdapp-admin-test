@@ -1,10 +1,17 @@
 <template>
-  <div>main</div>
+  <transition name="fade-transform" mode="out-in">
+    <router-view :key="key"/>
+  </transition>
 </template>
 
 <script>
 export default {
-  name: 'Main'
+  name: 'Main',
+  computed: {
+    key () {
+      return this.$route.fullPath
+    }
+  }
 }
 </script>
 
