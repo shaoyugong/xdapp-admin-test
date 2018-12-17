@@ -1,7 +1,9 @@
 <template>
-  <transition name="fade-transform" mode="out-in">
-    <router-view :key="key"/>
-  </transition>
+  <div class="main-container">
+    <transition name="fade-transform" mode="out-in">
+      <router-view :key="key"/>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -15,6 +17,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style rel="stylesheet/scss" lang="scss" scoped>
+// 内容栏
+.main-container {
+  margin: 0px 10px 10px 10px;
+}
 </style>
