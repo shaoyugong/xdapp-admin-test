@@ -68,6 +68,7 @@ export default {
   },
   methods: {
     handleOpen (key, keyPath) {
+      console.log(this.$store.state.theme.color)
       console.log(key, keyPath)
     },
     handleClose (key, keyPath) {
