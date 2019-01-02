@@ -1,7 +1,11 @@
 <template>
-  <div class="wrapper-container">
-    <Sidebar class="sidebar-container"/>
+  <div class="wrapper-container" :class="classObj">
+    <Sidebar class="sidebar-container" :is-collapse="isCollapse"/>
     <div class="right-container">
+      <el-radio-group v-model="isCollapse">
+        <el-radio-button :label="false">展开</el-radio-button>
+        <el-radio-button :label="true">收起</el-radio-button>
+      </el-radio-group>
       <Navbar/>
       <Main/>
     </div>
@@ -13,10 +17,23 @@ import { Sidebar, Navbar, Main } from './'
 
 export default {
   name: 'Layout',
+  data () {
+    return {
+      isCollapse: true
+    }
+  },
   components: {
     Navbar,
     Sidebar,
     Main
+  },
+  computed: {
+    classObj () {
+      return {
+        hideSidebar: this.isCollapse,
+        openSidebar: !this.isCollapse
+      }
+    }
   }
 }
 </script>
@@ -46,6 +63,77 @@ export default {
     left: 0;
     z-index: 1001;
     overflow: hidden;
+    //reset element-ui css
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+    .scrollbar-wrapper {
+      overflow-x: hidden!important;
+      .el-scrollbar__view {
+        height: 100%;
+      }
+    }
+    .el-scrollbar__bar.is-vertical{
+      right: 0px;
+    }
+    .is-horizontal {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+    .svg-icon {
+      margin-right: 16px;
+    }
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+    }
+    .is-active > .el-submenu__title{
+      color: #f4f4f5!important;
+    }
+  }
+
+  // 隐藏侧边样式
+  .hideSidebar {
+    .sidebar-container {
+      width: 50px !important;
+    }
+    .right-container {
+      margin-left: 50px;
+    }
+    .submenu-title-noDropdown {
+      padding-left: 10px !important;
+      position: relative;
+      .el-tooltip {
+        padding: 0 10px !important;
+      }
+    }
+    .el-submenu {
+      overflow: hidden;
+      &>.el-submenu__title {
+        padding-left: 10px !important;
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
   }
 
   // 右边栏

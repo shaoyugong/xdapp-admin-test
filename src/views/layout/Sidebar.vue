@@ -1,5 +1,14 @@
 <template>
-  <el-menu :default-openeds="['1', '3']">
+  <el-menu
+    :show-timeout="200"
+    :default-active="$route.path"
+    :collapse="this.$props.isCollapse"
+    @open="handleOpen"
+    @close="handleClose"
+    mode="vertical"
+    background-color="#304156"
+    text-color="#bfcbd9"
+    active-text-color="#409EFF">
     <el-submenu index="1">
       <template slot="title"><i class="el-icon-message"></i>导航一</template>
       <el-menu-item-group>
@@ -50,7 +59,21 @@
 
 <script>
 export default {
-  name: 'Sidebar'
+  name: 'Sidebar',
+  props: {
+    isCollapse: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
+    },
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
+    }
+  }
 }
 </script>
 
