@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import theme from './modules/theme'
+import theme from './modules/theme' // 样式模块
 
 Vue.use(Vuex)
 

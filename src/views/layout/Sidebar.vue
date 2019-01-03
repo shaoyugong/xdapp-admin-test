@@ -66,9 +66,14 @@ export default {
       default: false
     }
   },
+  computed: {
+    menus () {
+      return this.$store
+    }
+  },
   methods: {
     handleOpen (key, keyPath) {
-      console.log(this.$store.state.theme.color)
+      console.log(this.$router)
       console.log(key, keyPath)
     },
     handleClose (key, keyPath) {
