@@ -11,6 +11,8 @@ export default new Router({
     {
       path: '/home/index',
       component: Layout,
+      title: '主页',
+      icon: 'el-icon-ant-home',
       children: [
         {
           path: '/home/index',
@@ -36,6 +38,8 @@ export default new Router({
     }, {
       path: '/home/test',
       component: Layout,
+      title: '测试',
+      icon: 'test',
       children: [
         {
           path: '/home/test',
