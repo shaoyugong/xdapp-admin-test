@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper-container" :class="classObj">
-    <Sidebar class="sidebar-container" :is-collapse="isCollapse"/>
+    <sidebar class="sidebar-container" :is-collapse="isCollapse"/>
     <div class="right-container">
       <el-radio-group v-model="isCollapse">
         <el-radio-button :label="false">展开</el-radio-button>
@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import { Sidebar, Navbar, Main } from './'
+import { Navbar, Main } from './'
+import sidebar from './sidebar'
 
 export default {
   name: 'Layout',
@@ -24,7 +25,7 @@ export default {
   },
   components: {
     Navbar,
-    Sidebar,
+    sidebar,
     Main
   },
   computed: {

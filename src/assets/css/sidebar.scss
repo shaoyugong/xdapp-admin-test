@@ -7,10 +7,6 @@
     position: relative;
     height: 100%;
     width: 100%;
-    &.mobile.openSidebar{
-      position: fixed;
-      top: 0;
-    }
   }
 
   // 侧边栏
@@ -18,6 +14,7 @@
     width: 250px !important;
     height: 100%;
     position: fixed;
+    font-size: 0px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -60,10 +57,10 @@
   // 隐藏侧边样式
   .hideSidebar {
     .sidebar-container {
-      width: 50px !important;
+      width: 40px !important;
     }
     .right-container {
-      margin-left: 50px;
+      margin-left: 40px;
     }
     .submenu-title-noDropdown {
       padding-left: 10px !important;
@@ -93,6 +90,15 @@
           }
         }
       }
+    }
+  }
+
+  .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
+  .sidebar-container .el-submenu .el-menu-item {
+    min-width: 180px !important;
+    background-color: #1f2d3d !important;
+    &:hover {
+      background-color: #001528 !important;
     }
   }
 

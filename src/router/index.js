@@ -9,67 +9,34 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      title: '总览',
       path: '/home/index',
+      icon: 'el-icon-ant-dashboard',
       component: Layout,
-      title: '主页',
-      icon: 'el-icon-ant-home',
       children: [
         {
+          title: '主页',
           path: '/home/index',
-          component: () => import('@/views/home/index'),
-          name: 'index',
-          meta: {
-            title: 'index',
-            icon: 'index',
-            noCache: true
-          }
-        },
-        {
+          icon: 'el-icon-ant-home',
+          component: () => import('@/views/home/index')
+        }, {
+          title: 'test',
           path: '/home/test',
-          component: () => import('@/views/home/test'),
-          name: 'test1',
-          meta: {
-            title: 'test',
-            icon: 'test',
-            noCache: true
-          }
+          icon: 'el-icon-ant-tags-fill',
+          component: () => import('@/views/home/test')
         }
       ]
     }, {
-      path: '/home/test',
-      component: Layout,
-      title: '测试',
-      icon: 'test',
+      title: '标签',
+      path: '/home/test?=1',
+      icon: 'el-icon-ant-tags-fill',
+      component: () => import('@/views/home/test'),
       children: [
         {
-          path: '/home/test',
-          component: () => import('@/views/home/test'),
-          name: 'test2',
-          meta: {
-            title: 'test',
-            icon: 'test',
-            noCache: true
-          }
-        },
-        {
-          path: '/home/test',
-          component: () => import('@/views/home/test'),
-          name: 'test3',
-          meta: {
-            title: 'test',
-            icon: 'test',
-            noCache: true
-          }
-        },
-        {
-          path: '/home/test',
-          component: () => import('@/views/home/test'),
-          name: 'test4',
-          meta: {
-            title: 'test',
-            icon: 'test',
-            noCache: true
-          }
+          title: '测试1',
+          path: '/home/test?=2',
+          icon: 'el-icon-ant-tags-fill',
+          component: () => import('@/views/home/test')
         }
       ]
     }, {
