@@ -1,6 +1,7 @@
 <template>
   <el-row class="navbar-container">
     <el-col :span="12" align="left">
+      <on-off/>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
@@ -16,11 +17,13 @@
 
 <script>
 import ThemePicker from '@/components/ThemePicker'
+import onOff from './sidebar/onoff'
 
 export default {
   name: 'Navbar',
   components: {
-    ThemePicker
+    ThemePicker,
+    onOff
   }
 }
 </script>
@@ -40,6 +43,10 @@ export default {
       .el-breadcrumb {
         display: inline-block;
       }
+    }
+    .sidebar {
+      width: 64px;
+      height: 64px;
     }
   }
 </style>

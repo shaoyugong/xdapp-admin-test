@@ -1,11 +1,7 @@
 <template>
   <div class="wrapper-container" :class="classObj">
-    <sidebar class="sidebar-container" :is-collapse="isCollapse"/>
+    <sidebar class="sidebar-container"/>
     <div class="right-container">
-      <el-radio-group v-model="isCollapse">
-        <el-radio-button :label="false">展开</el-radio-button>
-        <el-radio-button :label="true">收起</el-radio-button>
-      </el-radio-group>
       <Navbar/>
       <Main/>
     </div>
@@ -18,11 +14,6 @@ import sidebar from './sidebar'
 
 export default {
   name: 'Layout',
-  data () {
-    return {
-      isCollapse: false
-    }
-  },
   components: {
     Navbar,
     sidebar,
@@ -31,8 +22,8 @@ export default {
   computed: {
     classObj () {
       return {
-        hideSidebar: this.isCollapse,
-        openSidebar: !this.isCollapse
+        hideSidebar: this.$store.state.app.sidebar.status,
+        openSidebar: !this.$store.state.app.sidebar.status
       }
     }
   }

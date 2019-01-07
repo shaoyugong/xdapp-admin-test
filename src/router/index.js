@@ -11,7 +11,7 @@ export default new Router({
     {
       title: '总览',
       path: '/home/index',
-      icon: 'el-icon-ant-dashboard',
+      icon: 'el-icon-ant-dashboard-fill',
       component: Layout,
       children: [
         {
@@ -20,23 +20,23 @@ export default new Router({
           icon: 'el-icon-ant-home',
           component: () => import('@/views/home/index')
         }, {
-          title: 'test',
-          path: '/home/test',
+          title: '图标',
+          path: '/home/icon',
           icon: 'el-icon-ant-tags-fill',
-          component: () => import('@/views/home/test')
+          component: () => import('@/views/home/icon')
         }
       ]
     }, {
       title: '标签',
-      path: '/home/test?=1',
+      path: '/home/icon?=1',
       icon: 'el-icon-ant-tags-fill',
-      component: () => import('@/views/home/test'),
+      component: () => import('@/views/home/icon'),
       children: [
         {
           title: '测试1',
-          path: '/home/test?=2',
+          path: '/home/icon?=2',
           icon: 'el-icon-ant-tags-fill',
-          component: () => import('@/views/home/test')
+          component: () => import('@/views/home/icon')
         }
       ]
     }, {
