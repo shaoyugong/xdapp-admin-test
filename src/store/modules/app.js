@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 const app = {
   state: {
     sidebar: {
-      status: !Cookies.get('sidebarStatus')
+      status: Boolean(Cookies.get('sidebarStatus'))
     }
   },
   mutations: {
@@ -13,7 +13,6 @@ const app = {
       } else {
         state.sidebar.status = true
       }
-
       Cookies.set('sidebarStatus', state.sidebar.status)
     }
   },

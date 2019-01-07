@@ -1,5 +1,5 @@
 <template>
-  <i :class="'el-icon-ant-down-square' + isActive" @click="OnOff"></i>
+  <i :class="'el-icon-ant-menu' + isActive" @click="OnOff"></i>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.el-icon-ant-down-square {
+.el-icon-ant-menu {
   font-size: 25px;
   display: inline-block;
   cursor: pointer;
@@ -28,7 +28,7 @@ export default {
   transform-origin: 50% 50%;
 }
 
-.el-icon-ant-down-square.is-active {
+.el-icon-ant-menu.is-active {
   transform: rotate(0deg);
 }
 </style>

@@ -15,13 +15,11 @@
         <template slot="title">
           <i :class="route.icon"></i><span slot="title">{{route.title}}</span>
         </template>
-
         <template v-for="child in route.children" v-if="!child.hidden">
             <el-menu-item :key="child.path" :index="child.path" class="nest-menu">{{child.title}}</el-menu-item>
         </template>
       </el-submenu>
     </template>
-
   </el-menu>
 </template>
 
