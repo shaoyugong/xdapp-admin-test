@@ -3,22 +3,23 @@ import Cookies from 'js-cookie'
 const app = {
   state: {
     sidebar: {
-      status: Boolean(Cookies.get('sidebarStatus'))
+      status: !+Cookies.get('sidebarStatus')
     }
   },
   mutations: {
-    SIDEBAR_STATUS: (state) => {
+    CHANGE_SIDEBAR: (state) => {
       if (state.sidebar.status) {
-        state.sidebar.status = false
+        Cookies.set('sidebarStatus', 1)
       } else {
-        state.sidebar.status = true
+        Cookies.set('sidebarStatus', 0)
       }
-      Cookies.set('sidebarStatus', state.sidebar.status)
+
+      state.sidebar.status = !state.sidebar.status
     }
   },
   actions: {
     changeSidebar ({ commit }) {
-      commit('SIDEBAR_STATUS')
+      commit('CHANGE_SIDEBAR')
     }
   }
 }

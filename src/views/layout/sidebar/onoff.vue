@@ -23,12 +23,12 @@ export default {
   font-size: 25px;
   display: inline-block;
   cursor: pointer;
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   transition: .38s;
   transform-origin: 50% 50%;
 }
 
 .el-icon-ant-menu.is-active {
-  transform: rotate(0deg);
+  transform: rotate(90deg);
 }
 </style>

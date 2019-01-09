@@ -29,8 +29,6 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-  // @import '@/assets/css/element-ui.scss';
-
   // 顶栏
   .navbar-container {
     padding: 10px 10px 10px 10px;
