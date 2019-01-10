@@ -1,11 +1,11 @@
 <template>
   <el-row class="navbar-container">
-    <el-col :span="12" align="left">
+    <el-col :span="20" align="left">
       <on-off class="sidebar-onoff"/>
-      <bread-crumb/>
+      <bread-crumb class="navbar-breadcrumb"/>
     </el-col>
-    <el-col :span="12" align="right">
-      <theme-picker class="theme-switch right-menu-item breadcrumb"/>
+    <el-col :span="4" align="right">
+      <theme-picker/>
     </el-col>
   </el-row>
 </template>
@@ -30,23 +30,18 @@ export default {
   .navbar-container {
     padding: 10px 10px 10px 10px;
     border-radius: 0px !important;
-    // background-color: $--color-primary;
     background-color: #fff;
     .el-col{
       border-radius: 4px;
       line-height: 60px;
-      .el-breadcrumb {
-        display: inline-block;
-      }
     }
-    .sidebar {
-      width: 64px;
-      height: 64px;
-    }
-
     .sidebar-onoff {
       padding-right: 10px;
       float: left;
+    }
+    .navbar-breadcrumb {
+      line-height: 60px;
+      display: inline-block;
     }
   }
 </style>

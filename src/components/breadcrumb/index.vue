@@ -14,5 +14,7 @@ export default {
 </script>
 
 <style scoped>
-
+.el-breadcrumb {
+  display: inline-block;
+}
 </style>

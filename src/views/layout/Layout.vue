@@ -29,3 +29,18 @@ export default {
   }
 }
 </script>
+
+<style rel="stylesheet/scss" lang="scss" scoped>
+@import "~@/assets/css/mixin.scss";
+
+.wrapper-container {
+  @include clearfix;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  &.mobile.openSidebar{
+    position: fixed;
+    top: 0;
+  }
+}
+</style>

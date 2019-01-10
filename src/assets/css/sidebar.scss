@@ -1,14 +1,4 @@
 #app {
-  // 主体区域
-  @import "~@/assets/css/mixin.scss";
-
-  .wrapper-container {
-    @include clearfix;
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
-
   // 侧边栏
   .sidebar-container {
     width: 250px !important;
