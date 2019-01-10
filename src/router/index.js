@@ -9,33 +9,21 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      title: '总览',
-      path: '/home/index',
-      icon: 'el-icon-ant-dashboard-fill',
+      name: 'dashboard',
+      path: '/home',
+      redirect: '/home/index',
+      meta: {title: 'dashboard', icon: 'el-icon-ant-dashboard-fill'},
       component: Layout,
       children: [
         {
-          title: '主页',
+          name: 'home',
           path: '/home/index',
-          icon: 'el-icon-ant-home',
+          meta: {title: 'home'},
           component: () => import('@/views/home/index')
         }, {
-          title: '图标',
+          name: 'icon',
           path: '/home/icon',
-          icon: 'el-icon-ant-tags-fill',
-          component: () => import('@/views/home/icon')
-        }
-      ]
-    }, {
-      title: '标签',
-      path: '/home/icon?=1',
-      icon: 'el-icon-ant-tags-fill',
-      component: () => import('@/views/home/icon'),
-      children: [
-        {
-          title: '测试1',
-          path: '/home/icon?=2',
-          icon: 'el-icon-ant-tags-fill',
+          meta: {title: 'icon'},
           component: () => import('@/views/home/icon')
         }
       ]

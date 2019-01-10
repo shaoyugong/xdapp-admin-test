@@ -13,10 +13,10 @@
     <template v-for="route in routers">
       <el-submenu v-if="!route.hidden" :key="route.path" :base-path="route.path" :index="route.path">
         <template slot="title">
-          <i :class="route.icon"></i><span slot="title">{{route.title}}</span>
+          <i :class="route.meta.icon"></i><span slot="title">{{ $t('route.' + route.meta.title) }}</span>
         </template>
         <template v-for="child in route.children" v-if="!child.hidden">
-            <el-menu-item :key="child.path" :index="child.path" class="nest-menu">{{child.title}}</el-menu-item>
+            <el-menu-item :key="child.path" :index="child.path" class="nest-menu">{{ $t('route.' + child.meta.title) }}</el-menu-item>
         </template>
       </el-submenu>
     </template>

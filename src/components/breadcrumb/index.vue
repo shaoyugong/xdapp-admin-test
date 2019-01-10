@@ -1,15 +1,33 @@
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-    <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-    <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-    <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+    <el-breadcrumb-item v-for="(item, index) in breadcrumb" :key="item.path">
+      <a v-if="index < breadcrumb.length - 1" :href="item.path">{{ $t('route.' + item.meta.title) }}</a>
+      <span v-else>{{ $t('route.' + item.meta.title) }}</span>
+    </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 
 <script>
 export default {
-  name: 'breadcrumb'
+  name: 'breadcrumb',
+  data () {
+    return {
+      breadcrumb: null
+    }
+  },
+  watch: {
+    $route () {
+      this.matchedRouters()
+    }
+  },
+  created () {
+    this.matchedRouters()
+  },
+  methods: {
+    matchedRouters () {
+      this.breadcrumb = this.$route.matched
+    }
+  }
 }
 </script>
 

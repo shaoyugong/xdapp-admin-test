@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .el-icon-ant-menu {
-  line-height: 60px;
+  line-height: 50px;
   font-size: 35px;
   display: inline-block;
   cursor: pointer;

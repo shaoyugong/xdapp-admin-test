@@ -33,14 +33,13 @@ export default {
     background-color: #fff;
     .el-col{
       border-radius: 4px;
-      line-height: 60px;
+      line-height: 50px;
     }
     .sidebar-onoff {
       padding-right: 10px;
       float: left;
     }
     .navbar-breadcrumb {
-      line-height: 60px;
       display: inline-block;
     }
   }
