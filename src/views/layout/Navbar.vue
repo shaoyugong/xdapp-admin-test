@@ -1,5 +1,5 @@
 <template>
-  <el-row class="navbar-container">
+  <el-row class="navbar">
     <el-col :span="20" align="left">
       <on-off class="sidebar-onoff"/>
       <bread-crumb class="navbar-breadcrumb"/>
@@ -27,7 +27,8 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   // 顶栏
-  .navbar-container {
+  .navbar {
+    line-height: 50px;
     padding: 10px 10px 10px 10px;
     border-radius: 0px !important;
     background-color: #fff;

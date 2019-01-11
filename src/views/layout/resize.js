@@ -16,7 +16,12 @@ export default {
   methods: {
     deviceAdapter () {
       const page = body.getBoundingClientRect()
-      store.dispatch('changeDevice', page.width < PATH_WIDTH ? 'mobile' : 'pc')
+
+      if (page.width < PATH_WIDTH) {
+        store.dispatch('changeDevice', 'mobile')
+      } else {
+        store.dispatch('changeDevice', 'pc')
+      }
     }
   }
 }

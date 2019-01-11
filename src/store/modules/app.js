@@ -17,6 +17,10 @@ const app = {
 
       state.sidebar.status = !state.sidebar.status
     },
+    HIDE_SIDEBAR: (state) => {
+      Cookies.set('sidebarStatus', 1)
+      state.sidebar.status = true
+    },
     CHANGE_DEVICE: (state, device) => {
       state.device = device
     }
@@ -24,6 +28,9 @@ const app = {
   actions: {
     changeSidebar ({ commit }) {
       commit('CHANGE_SIDEBAR')
+    },
+    hideSidebar ({commit}) {
+      commit('HIDE_SIDEBAR')
     },
     changeDevice ({ commit }, device) {
       commit('CHANGE_DEVICE', device)

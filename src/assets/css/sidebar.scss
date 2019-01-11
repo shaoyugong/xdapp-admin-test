@@ -118,13 +118,6 @@
     }
   }
 
-  .withoutAnimation {
-    .main-container,
-    .sidebar-container {
-      transition: none;
-    }
-  }
-
   .el-menu--vertical{
     & >.el-menu{
       .svg-icon{
