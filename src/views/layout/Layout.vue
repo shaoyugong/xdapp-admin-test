@@ -3,6 +3,7 @@
     <sidebar class="sidebar-container"/>
     <div class="right-container">
       <Navbar/>
+      {{ classObj }}
       <Main/>
     </div>
   </div>
@@ -11,6 +12,7 @@
 <script>
 import { Navbar, Main } from './'
 import sidebar from './sidebar'
+import resize from './resize'
 
 export default {
   name: 'Layout',
@@ -19,11 +21,13 @@ export default {
     sidebar,
     Main
   },
+  mixins: [resize],
   computed: {
     classObj () {
       return {
         hideSidebar: this.$store.state.app.sidebar.status,
-        openSidebar: !this.$store.state.app.sidebar.status
+        openSidebar: !this.$store.state.app.sidebar.status,
+        mobile: this.$store.state.app.device === 'mobile'
       }
     }
   }

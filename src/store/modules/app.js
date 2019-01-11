@@ -4,7 +4,8 @@ const app = {
   state: {
     sidebar: {
       status: !+Cookies.get('sidebarStatus')
-    }
+    },
+    device: 'pc'
   },
   mutations: {
     CHANGE_SIDEBAR: (state) => {
@@ -15,11 +16,17 @@ const app = {
       }
 
       state.sidebar.status = !state.sidebar.status
+    },
+    CHANGE_DEVICE: (state, device) => {
+      state.device = device
     }
   },
   actions: {
     changeSidebar ({ commit }) {
       commit('CHANGE_SIDEBAR')
+    },
+    changeDevice ({ commit }, device) {
+      commit('CHANGE_DEVICE', device)
     }
   }
 }

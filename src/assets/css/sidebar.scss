@@ -103,7 +103,7 @@
 
   //适配移动端
   .mobile {
-    .main-container {
+    .right-container {
       margin-left: 0px;
     }
     .sidebar-container {
@@ -111,7 +111,7 @@
       width: 180px !important;
     }
     &.hideSidebar {
-      .sidebar-container {
+      .right-container {
         transition-duration: 0.3s;
         transform: translate3d(-180px, 0, 0);
       }
