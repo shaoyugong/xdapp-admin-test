@@ -1,8 +1,7 @@
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item v-for="(item, index) in breadcrumb" :key="item.path">
-      <a v-if="index < breadcrumb.length - 1" :href="item.path">{{ $t('route.' + item.meta.title) }}</a>
-      <span v-else>{{ $t('route.' + item.meta.title) }}</span>
+    <el-breadcrumb-item v-for="item in breadcrumb" :key="item.path" :to="item.path || item.redirect">
+      <span>{{ $t('route.' + item.meta.title) }}</span>
     </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
