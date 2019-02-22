@@ -19,6 +19,7 @@ export default {
 
       if (page.width < PATH_WIDTH) {
         store.dispatch('changeDevice', 'mobile')
+        this.$store.dispatch('changeSidebar')
       } else {
         store.dispatch('changeDevice', 'pc')
       }
